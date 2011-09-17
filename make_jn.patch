@@ -1,0 +1,16 @@
+ this patch allows parallel builds (or else:
+"warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.")
+--- qrupdate-1.1.1/Makefile.orig	2011-09-17 20:13:06.582130468 +0200
++++ qrupdate-1.1.1/Makefile	2011-09-17 20:13:17.671293784 +0200
+@@ -32,9 +32,9 @@ help:
+ 	@echo "   make install - installs everything"
+ 
+ lib:
+-	make -C src/ lib
++	+make -C src/ lib
+ solib:
+-	make -C src/ solib
++	+make -C src/ solib
+ test: lib
+ 	make -C test/
+ 

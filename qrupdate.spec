@@ -7,6 +7,7 @@ License:	GPL v3+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/qrupdate/%{name}-%{version}.tar.gz
 # Source0-md5:	7782c7ee6c234e56a72d6b86c1856fa0
+Patch0:		make_jn.patch
 URL:		http://qrupdate.sourceforge.net/
 BuildRequires:	blas-devel
 BuildRequires:	gcc-fortran
@@ -49,9 +50,14 @@ Statyczna biblioteka QRupdate.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__make} lib solib \
+%{__make} lib\
+	FC=gfortran \
+	FFLAGS="%{rpmcflags}" \
+	BLAS="%{rpmldflags} -lblas"
+%{__make} solib\
 	FC=gfortran \
 	FFLAGS="%{rpmcflags}" \
 	BLAS="%{rpmldflags} -lblas"
