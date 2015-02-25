@@ -2,7 +2,7 @@ Summary:	QRupdate - library for fast updating of QR and Cholesky decompositions
 Summary(pl.UTF-8):	QRupdate - biblioteka do szybkiego uaktualniania rozkładów QR i Cholesky'ego
 Name:		qrupdate
 Version:	1.1.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/qrupdate/%{name}-%{version}.tar.gz
