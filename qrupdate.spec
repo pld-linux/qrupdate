@@ -1,12 +1,12 @@
 Summary:	QRupdate - library for fast updating of QR and Cholesky decompositions
 Summary(pl.UTF-8):	QRupdate - biblioteka do szybkiego uaktualniania rozkładów QR i Cholesky'ego
 Name:		qrupdate
-Version:	1.1.1
-Release:	2
+Version:	1.1.2
+Release:	1
 License:	GPL v3+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/qrupdate/%{name}-%{version}.tar.gz
-# Source0-md5:	7782c7ee6c234e56a72d6b86c1856fa0
+# Source0-md5:	6d073887c6e858c24aeda5b54c57a8c4
 Patch0:		make_jn.patch
 URL:		http://qrupdate.sourceforge.net/
 BuildRequires:	blas-devel
@@ -53,11 +53,11 @@ Statyczna biblioteka QRupdate.
 %patch0 -p1
 
 %build
-%{__make} lib\
+%{__make} lib \
 	FC=gfortran \
 	FFLAGS="%{rpmcflags}" \
 	BLAS="%{rpmldflags} -lblas"
-%{__make} solib\
+%{__make} solib \
 	FC=gfortran \
 	FFLAGS="%{rpmcflags}" \
 	BLAS="%{rpmldflags} -lblas"
